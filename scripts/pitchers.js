@@ -1,11 +1,11 @@
 const startingPitchers = [];
 
 class Pitcher {
-	constructor(name, age, activePlayer){
+	constructor(name, age, activeRoster){
 		this.name = name;
 		this.age = age;
-		this.activePlayer = activePlayer;
-		this.pitches = [];
+		this.onActiveRoster = activeRoster;
+		this.gamesStarted = [];
 	}
 }
 
