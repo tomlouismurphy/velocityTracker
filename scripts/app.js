@@ -20,6 +20,17 @@ const viewGamesList = () => {
 		const $newtitle = $('<h4></h4>');
 		$newtitle.text(e.target.innerText);
 		$newdiv.append($newtitle);
+		for (let i = 0; i < startingPitchers.length; i++){
+			if (startingPitchers[i].name === e.target.innerText){
+				for (let j = 0; j < startingPitchers[i].gamesStarted.length; j++){
+					const $newp = $('<p></p>');
+					$newp.text(startingPitchers[i].gamesStarted[j].date);
+					$newdiv.append($newp);
+				}
+			} else {
+				;
+			}
+		}
 		$('.selectedPitcher').append($newdiv);
 	})
 }
