@@ -14,16 +14,33 @@ pitch_list = whole_text.split('2018-05-04')
 
 pitch_list.pop(0)
 
-# print(pitch_list[85])
+segmented_pitch_list = [x.split('</td>') for x in pitch_list]
 
-pitch_test = pitch_list[85].split('</td>')
+def white_space_remove(s):
+	if (len(s) > 22):
+		return s[22:]
 
-print(pitch_test[0])
+final_pitch_list = [[white_space_remove(y) for y in x] for x in segmented_pitch_list]
 
-print(pitch_test[1])
+for w in range(86):
+	print(final_pitch_list[w][6])
 
-print(pitch_test[2])
+print(final_pitch_list[55][1])
 
-print(len(pitch_test))
+print(segmented_pitch_list[55][1][22:])
 
-print(len(pitch_list))
+# pitch_test = pitch_list[85].split('</td>')
+
+# pitch_test.pop(0)
+
+# pitch_test.pop(50)
+
+# print(len(pitch_test))
+
+# print(len(pitch_test[2]))
+
+# pitches_fix = [x[22:] for x in pitch_test]
+
+# print(pitches_fix[22])
+
+# print(pitches_fix[49])
