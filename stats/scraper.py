@@ -14,6 +14,16 @@ pitch_list = whole_text.split('2018-05-04')
 
 pitch_list.pop(0)
 
-print(pitch_list[85])
+# print(pitch_list[85])
+
+pitch_test = pitch_list[85].split('</td>')
+
+print(pitch_test[0])
+
+print(pitch_test[1])
+
+print(pitch_test[2])
+
+print(len(pitch_test))
 
 print(len(pitch_list))
