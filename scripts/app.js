@@ -16,6 +16,7 @@ populatePitcherList();
 
 const viewGamesList = () => {
 	$('.soxPitcher').on('click', (e) => {
+		$('.selectedPitcher').empty();
 		const $newdiv = $('<div></div>');
 		const $newtitle = $('<h4></h4>');
 		$newtitle.text(e.target.innerText);

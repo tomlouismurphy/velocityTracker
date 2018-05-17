@@ -7,3 +7,18 @@ body {
 h3 {
 	color: blue;
 }
+
+.pitcherMenu {
+	border: 2px dotted black;
+	padding-left: 10px;
+	width: 25%;
+}
+
+.selectedPitcher {
+	text-align: center;
+}
+
+#headingInstructions {
+	font-weight: italic;
+	color: navy;
+}
