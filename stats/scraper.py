@@ -6,6 +6,14 @@ def white_space_remove(s):
 	if (len(s) > 22):
 		return s[22:]
 
+def json_validator(data):
+    try:
+        json.loads(data)
+        return True
+    except ValueError as error:
+        print("invalid json: %s" % error)
+        return False
+
 #David Price, March 30 vs. Tampa Bay Rays
 
 mar30_page = requests.get('http://www.brooksbaseball.net/pfxVB/tabdel_expanded.php?pitchSel=456034&game=gid_2018_03_30_bosmlb_tbamlb_1/&s_type=&h_size=700&v_size=500')
@@ -28,12 +36,19 @@ mar30_final_pitch_list = [[white_space_remove(y) for y in x] for x in mar30_segm
 
 mar30_exportable_pitch = json.dumps(mar30_final_pitch_list)
 
-for w in range(76):
-	print(mar30_final_pitch_list[w][6])
+# Used below function to create the json file, and I'm now commenting it out to avoid overwriting
 
-print(mar30_final_pitch_list[55][1])
+# with open('price_mar30.json', 'w') as f:
+# 	f.write(mar30_exportable_pitch)
 
-print(mar30_segmented_pitch_list[55][1][22:])
+# The three operations below are relics from testing phase that I'm preserving
+
+# for w in range(76):
+# 	print(mar30_final_pitch_list[w][6])
+
+# print(mar30_final_pitch_list[55][1])
+
+# print(mar30_segmented_pitch_list[55][1][22:])
 
 #David Price, April 5 vs. Tampa Bay Rays
 
@@ -55,12 +70,8 @@ apr05_final_pitch_list = [[white_space_remove(y) for y in x] for x in apr05_segm
 
 apr05_exportable_pitch = json.dumps(apr05_final_pitch_list)
 
-for w in range(90):
-	print(apr05_final_pitch_list[w][6])
-
-print(apr05_final_pitch_list[55][1])
-
-print(apr05_segmented_pitch_list[55][1][22:])
+# with open('price_apr05.json', 'w') as f:
+# 	f.write(apr05_exportable_pitch)
 
 #David Price, April 11 vs. New York Yankees
 
@@ -82,12 +93,8 @@ apr11_final_pitch_list = [[white_space_remove(y) for y in x] for x in apr11_segm
 
 apr11_exportable_pitch = json.dumps(apr11_final_pitch_list)
 
-for w in range(35):
-	print(apr11_final_pitch_list[w][6])
-
-print(apr11_final_pitch_list[25][1])
-
-print(apr11_segmented_pitch_list[25][1][22:])
+# with open('price_apr11.json', 'w') as f:
+# 	f.write(apr11_exportable_pitch)
 
 #David Price, April 17 vs. Los Angeles Angels
 
@@ -109,12 +116,8 @@ apr17_final_pitch_list = [[white_space_remove(y) for y in x] for x in apr17_segm
 
 apr17_exportable_pitch = json.dumps(apr17_final_pitch_list)
 
-for w in range(78):
-	print(apr17_final_pitch_list[w][6])
-
-print(apr17_final_pitch_list[55][1])
-
-print(apr17_segmented_pitch_list[55][1][22:])
+# with open('price_apr17.json', 'w') as f:
+# 	f.write(apr17_exportable_pitch)
 
 #David Price, April 22 vs. Oakland Athletics
 
@@ -136,12 +139,8 @@ apr22_final_pitch_list = [[white_space_remove(y) for y in x] for x in apr22_segm
 
 apr22_exportable_pitch = json.dumps(apr22_final_pitch_list)
 
-for w in range(96):
-	print(apr22_final_pitch_list[w][6])
-
-print(apr22_final_pitch_list[55][1])
-
-print(apr22_segmented_pitch_list[55][1][22:])
+# with open('price_apr22.json', 'w') as f:
+# 	f.write(apr22_exportable_pitch)
 
 #David Price, April 28 vs. Tampa Bay Rays
 
@@ -163,12 +162,8 @@ apr28_final_pitch_list = [[white_space_remove(y) for y in x] for x in apr28_segm
 
 apr28_exportable_pitch = json.dumps(apr28_final_pitch_list)
 
-for w in range(85):
-	print(apr28_final_pitch_list[w][6])
-
-print(apr28_final_pitch_list[55][1])
-
-print(apr28_segmented_pitch_list[55][1][22:])
+# with open('price_apr28.json', 'w') as f:
+# 	f.write(apr28_exportable_pitch)
 
 #David Price, May 3 vs. Texas Rangers
 
@@ -190,12 +185,8 @@ may03_final_pitch_list = [[white_space_remove(y) for y in x] for x in may03_segm
 
 may03_exportable_pitch = json.dumps(may03_final_pitch_list)
 
-for w in range(86):
-	print(may03_final_pitch_list[w][6])
-
-print(may03_final_pitch_list[55][1])
-
-print(may03_segmented_pitch_list[55][1][22:])
+# with open('price_may03.json', 'w') as f:
+# 	f.write(may03_exportable_pitch)
 
 #David Price, May 12 vs. Toronto Blue Jays
 
@@ -217,12 +208,8 @@ may12_final_pitch_list = [[white_space_remove(y) for y in x] for x in may12_segm
 
 may12_exportable_pitch = json.dumps(may12_final_pitch_list)
 
-for w in range(93):
-	print(may12_final_pitch_list[w][6])
-
-print(may12_final_pitch_list[55][1])
-
-print(may12_segmented_pitch_list[55][1][22:])
+# with open('price_may12.json', 'w') as f:
+# 	f.write(may12_exportable_pitch)
 
 # Initial Testing Data
 
