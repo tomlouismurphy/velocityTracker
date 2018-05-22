@@ -211,6 +211,31 @@ may12_exportable_pitch = json.dumps(may12_final_pitch_list)
 # with open('price_may12.json', 'w') as f:
 # 	f.write(may12_exportable_pitch)
 
+#David Price, May 17 vs. Baltimore Orioles
+
+may17_page = requests.get('http://www.brooksbaseball.net/pfxVB/tabdel_expanded.php?pitchSel=456034&game=gid_2018_05_17_balmlb_bosmlb_1/&s_type=&h_size=700&v_size=500')
+
+may17_data = may17_page.text
+
+may17_soup = BeautifulSoup(may17_data, 'html5lib')
+
+may17_whole_text = str(may17_soup)
+
+may17_pitch_list2 = may17_whole_text.replace('2018-05-18', '2018-05-17')
+
+may17_pitch_list = may17_pitch_list2.split('2018-05-17')
+
+may17_pitch_list.pop(0)
+
+may17_segmented_pitch_list = [x.split('</td>') for x in may17_pitch_list]
+
+may17_final_pitch_list = [[white_space_remove(y) for y in x] for x in may17_segmented_pitch_list]
+
+may17_exportable_pitch = json.dumps(may17_final_pitch_list)
+
+# with open('price_may17.json', 'w') as f:
+# 	f.write(may17_exportable_pitch)
+
 # Initial Testing Data
 
 # pitch_test = pitch_list[85].split('</td>')
