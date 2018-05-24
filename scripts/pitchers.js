@@ -23,3 +23,5 @@ const velazquez = new Pitcher('Hector Velazquez', 29, true);
 startingPitchers.push(velazquez);
 const johnson = new Pitcher('Brian Johnson', 27, true);
 startingPitchers.push(johnson);
+
+module.exports = {soxPitchers: startingPitchers};

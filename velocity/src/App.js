@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Pitchers} from './Pitchers/Pitchers.js';
+import {SelectedPitcher} from './SelectedPitcher/SelectedPitcher.js';
+import data from './scripts/pitchers.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pitchers: [],
+      selectedPitcher: ''
+    }
+  }
+  componentDidMount(){
+    const state = this.state;
+    for (let i = 0; i < data.data.length; i++){
+      state.pitchers.push(data.data[i]);
+    }
+    console.log(state.pitchers);
+    this.setState(state);
+  }
+  handleFancy = (e) => {
+    console.log(data);
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <div id='pitchers-heading'>
+          <h3>Red Sox Starters - 2018</h3>
+          <div id='heading-instructions'>
+            <p>Click on a pitcher's name for more info.</p>
+            <button onClick={this.handleFancy}>Fancy</button>
+          </div>
+        </div>
+        <Pitchers/>
+        <SelectedPitcher/>
       </div>
     );
   }
