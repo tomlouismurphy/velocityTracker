@@ -23,6 +23,18 @@ class App extends Component {
   handleFancy = (e) => {
     console.log(data);
   }
+  togglePitcher = (e) => {
+    console.log(e.currentTarget);
+    const state = this.state;
+    for (let i = 0; i < state.pitchers.length; i++){
+      if (state.pitchers[i].name === e.currentTarget.innerText){
+        state.selectedPitcher = state.pitchers[i].name;
+      } else {
+        ;
+      }
+    }
+    this.setState(state);
+  }
   render() {
     return (
       <div>
@@ -32,7 +44,7 @@ class App extends Component {
             <p>Click on a pitcher's name for more info.</p>
           </div>
         </div>
-        <Pitchers/>
+        <Pitchers togglePitcher={this.togglePitcher} pitchers={this.state.pitchers}/>
         <SelectedPitcher/>
       </div>
     );

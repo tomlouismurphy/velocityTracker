@@ -13,10 +13,10 @@ export class Pitchers extends Component {
   }
   render() {
     const pitcherList = this.state.pitchers.map((item, i) => {
-      return <p key={i}>{item.name}</p>
+      return <p onClick={this.props.togglePitcher} key={i} className="sox-starter">{item.name}</p>
     })
     return (
-      <div>
+      <div className="pitcher-container">
         {pitcherList}
       </div>
     );
