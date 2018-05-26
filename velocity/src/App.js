@@ -30,7 +30,6 @@ class App extends Component {
           <h3>Red Sox Starters - 2018</h3>
           <div id='heading-instructions'>
             <p>Click on a pitcher's name for more info.</p>
-            <button onClick={this.handleFancy}>Fancy</button>
           </div>
         </div>
         <Pitchers/>
