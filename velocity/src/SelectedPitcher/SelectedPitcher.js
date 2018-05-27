@@ -6,19 +6,36 @@ export class SelectedPitcher extends Component {
 		super(props);
 		this.state = {
 			selectedPitcher: this.props.selectedPitcher.name,
-			gamesStarted: this.props.selectedPitcher.gamesStarted
+			gamesStarted: [],
+			dummy: [1, 2]
 		}
 	}
 	seeState = (e) => {
 		console.log(this.state.selectedPitcher);
 		console.log(this.state.gamesStarted);
 	}
-	static getDerivedStateFromProps(props, state);
+	componentWillReceiveProps(nextProps) {
+		const state = this.state;
+		if (this.props.selectedPitcher.name !== nextProps.selectedPitcher.name){
+			state.selectedPitcher = nextProps.selectedPitcher.name;
+		}
+		if (this.props.selectedPitcher.gamesStarted !== nextProps.selectedPitcher.gamesStarted) {
+			state.gamesStarted.length = 0;
+			for (let i = 0; i < nextProps.selectedPitcher.gamesStarted.length; i++) {
+				state.gamesStarted.push(nextProps.selectedPitcher.gamesStarted[i].date);
+			}
+		}
+		console.log(state.gamesStarted);
+		this.setState(state);
+	}
   	render() {
+  		const gameList = this.state.gamesStarted.map((item, i) => {
+	      return <p key={i} className="game-event">{item}</p>
+	    })
 		return (
 		  <div>
-		  	<h3 onClick={this.seeState}>Test</h3>
 		    <h3>{this.state.selectedPitcher}</h3>
+		    {gameList}
 		  </div>
 		);
   	}
