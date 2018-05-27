@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       pitchers: [],
-      selectedPitcher: ''
+      selectedPitcher: {}
     }
   }
   componentDidMount(){
@@ -28,11 +28,12 @@ class App extends Component {
     const state = this.state;
     for (let i = 0; i < state.pitchers.length; i++){
       if (state.pitchers[i].name === e.currentTarget.innerText){
-        state.selectedPitcher = state.pitchers[i].name;
+        state.selectedPitcher = state.pitchers[i];
       } else {
         ;
       }
     }
+    console.log(state.selectedPitcher);
     this.setState(state);
   }
   render() {
@@ -45,7 +46,7 @@ class App extends Component {
           </div>
         </div>
         <Pitchers togglePitcher={this.togglePitcher} pitchers={this.state.pitchers}/>
-        <SelectedPitcher/>
+        <SelectedPitcher selectedPitcher={this.state.selectedPitcher}/>
       </div>
     );
   }
