@@ -1,7 +1,7 @@
 body {
-  background-color: navy;
+  background: linear-gradient(to bottom right, #2727dc, #3737db);
   color: white;
-  margin: 10px;
+  height: 100%;
 }
 
 h3 {
@@ -12,10 +12,12 @@ h3 {
   margin: 0 auto;
   width: 960px;
   height: 540px;
+  opacity: 0.85;
+  border-radius: 10px;
 }
 
 .pitcherMenu {
-  border: 2px dotted black;
+  border: 1px solid silver;
   padding-left: 10px;
   width: 25%;
 }
@@ -32,4 +34,9 @@ h3 {
 #pitchers-heading {
   margin-left: 20px;
   padding-top: 2px;
+}
+
+#full-body {
+  height: 90vh;
+  margin: 5vh;
 }

@@ -39,7 +39,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div id='full-body'>
         <div id='main-container' style = {{backgroundImage: 'url(' + this.state.image + ')'}}>
           <div id='pitchers-heading'>
             <h3>Red Sox Starters - 2018</h3>
