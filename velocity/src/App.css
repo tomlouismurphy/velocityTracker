@@ -1,11 +1,17 @@
 body {
-  background-color: red;
+  background-color: navy;
   color: white;
   margin: 10px;
 }
 
 h3 {
-  color: navy;
+  color: white;
+}
+
+#main-container {
+  margin: 0 auto;
+  width: 960px;
+  height: 540px;
 }
 
 .pitcherMenu {
@@ -20,5 +26,10 @@ h3 {
 
 #heading-instructions {
   font-style: italic;
-  color: navy;
+  color: white;
+}
+
+#pitchers-heading {
+  margin-left: 20px;
+  padding-top: 2px;
 }

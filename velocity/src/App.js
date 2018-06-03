@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       pitchers: [],
-      selectedPitcher: {}
+      selectedPitcher: {},
+      image: 'https://www.maxpixel.net/static/photo/1x/Close-up-Macro-Baseball-Dirty-Ball-1842290.jpg'
     }
   }
   componentDidMount(){
@@ -39,14 +40,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div id='pitchers-heading'>
-          <h3>Red Sox Starters - 2018</h3>
-          <div id='heading-instructions'>
-            <p>Click on a pitcher's name for more info.</p>
+        <div id='main-container' style = {{backgroundImage: 'url(' + this.state.image + ')'}}>
+          <div id='pitchers-heading'>
+            <h3>Red Sox Starters - 2018</h3>
+            <div id='heading-instructions'>
+              <p>Click on a pitcher's name for more info.</p>
+            </div>
           </div>
+          <Pitchers togglePitcher={this.togglePitcher} pitchers={this.state.pitchers}/>
+          <SelectedPitcher selectedPitcher={this.state.selectedPitcher}/>
         </div>
-        <Pitchers togglePitcher={this.togglePitcher} pitchers={this.state.pitchers}/>
-        <SelectedPitcher selectedPitcher={this.state.selectedPitcher}/>
       </div>
     );
   }

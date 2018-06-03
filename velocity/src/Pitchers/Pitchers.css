@@ -1,8 +1,10 @@
 .pitcher-container {
 	border: 2px dotted black;
 	width: 33%;
+	background: rgba(255, 255, 255, 0.7);
+	margin-left: 20px;
 }
 
 .sox-starter {
-	color: teal;
+	color: #89160b;
 }
