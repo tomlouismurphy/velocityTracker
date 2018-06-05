@@ -8,5 +8,12 @@
 }
 
 .sox-starter {
+	display: inline;
+	margin: auto;
 	color: #89160b;
+}
+
+.pitcher-thumbnail {
+	height: 44px;
+	width: 44px;
 }
